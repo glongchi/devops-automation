@@ -22,5 +22,5 @@ jobs:
       with:
         azcliversion: 2.0.72
         inlineScript: |
-          chmod +x $GITHUB_WORKSPACE/sampleScript.sh
-          $GITHUB_WORKSPACE/sampleScript.sh
+          chmod +x $GITHUB_WORKSPACE/azurecli/network101.sh
+          $GITHUB_WORKSPACE/azurecli/network101.sh
