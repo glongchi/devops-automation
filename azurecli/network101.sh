@@ -10,4 +10,6 @@
 
 # echo Hello $FNAME!
 echo Your Azure Subscriptions are as follows...
-az account list
+#az account list
+
+ echo '[{"vnetName": "vnethub", "vnetAddresSpace":"10.0.0.0/16"},{"vnetName": "vnet1", "vnetAddresSpace":"10.1.0.0/16"}]' | jq .[]
