@@ -8,8 +8,8 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-    - name: Install jq for processing json
-      run: sudo apt-get install jq
+    # - name: Install jq for processing json
+    #   run: sudo apt-get install jq
 
     - name: Azure Login
       uses: azure/login@v1
