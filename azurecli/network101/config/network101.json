@@ -1,0 +1,92 @@
+[
+  {
+    "vnetName": "vnet1",
+    "VnetPrefix": "10.1.0.0/16",
+    "subnets": [
+      {
+        "SubnetName": "vnet1-subnet1",
+        "SubnetPrefix": "10.1.1.0/24",
+        "associatedNsg": "nsg1",
+        "vms": [
+          {
+            "name": "vnet1-vm1",
+            "image": "UbuntuLTS",
+            "adminUser": "glongchi",
+            "adminPassword": "password"
+          },
+          {
+            "name": "vnet1-vm-mgmt1",
+            "image": "UbuntuLTS",
+            "adminUser": "glongchi",
+            "adminPassword": "password"
+          }
+        ]
+      },
+      {
+        "SubnetName": "vnet1-subnet2",
+        "SubnetPrefix": "10.1.2.0/24",
+        "associatedNsg": "nsg1",
+        "associatedRouteTable": "rt-nva",
+        "vms": [
+          {
+            "name": "vnet1-vm-web1",
+            "image": "UbuntuLTS",
+            "adminUser": "glongchi",
+            "adminPassword": "password"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "vnetName": "vnethub",
+    "VnetPrefix": "10.0.0.0/16",
+    "subnets": [
+      {
+        "SubnetName": "GatewaySubnet",
+        "SubnetPrefix": "10.0.254.0/27"
+      },
+      {
+        "SubnetName": "vnethub-subnet1",
+        "SubnetPrefix": "10.0.1.0/24",
+        "associatedNsg": "nsg-hub",
+        "vms": [
+          {
+            "name": "vnetHub-vm1",
+            "image": "UbuntuLTS",
+            "adminUser": "glongchi",
+            "adminPassword": "password"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "vnetName": "vnet2",
+    "VnetPrefix": "10.2.0.0/16"
+  },
+  {
+    "vnetName": "vnetOnprem",
+    "VnetPrefix": "10.128.0.0/16",
+    "subnets": [
+      {
+        "SubnetName": "GatewaySubnet",
+        "SubnetPrefix": "10.128.254.0/27"
+      },
+      {
+        "SubnetName": "vnetOnprem-subnet1",
+        "SubnetPrefix": "10.128.1.0/24",
+        "associatedNsg": "",
+        "vms": [
+          {
+            "name": "vnetHub-vm1",
+            "image": "UbuntuLTS",
+            "adminUser": "glongchi",
+            "adminPassword": "password"
+          }
+        ]
+      }
+    ]
+  }
+]

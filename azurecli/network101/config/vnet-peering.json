@@ -1,0 +1,15 @@
+[
+  {
+    "name": "rt-nva",
+    "resourceGroup": "az300Primary",
+    "location": "eastus",
+    "routes": [
+      {
+        "name": "route-to-nva",
+        "netHopType": "VirtualAppliance",
+        "addressPrefix": "10.0.1.0/24",
+        "netHopIpAddress": "10.1.1.5"
+      }
+    ]
+  }
+]

@@ -1,0 +1,63 @@
+[
+  {
+    "name": "nsg-hub",
+    "resourceGroup": "az300Primary",
+    "location": "eastus",
+    "rules": [
+      {
+        "name": "vnet-hub-allow-ssh",
+        "priority": "100",
+        "destinationAddressPrefix": "10.0.1.0/24",
+        "destinationAddressPort": "22",
+        "direction": "Inbound",
+        "access": "Allow",
+        "protocol": "ssh"
+      }
+    ]
+  },
+  {
+    "name": "nsg1",
+    "resourceGroup": "az300Primary",
+    "location": "eastus",
+    "rules": [
+      {
+        "type": "asg",
+        "name": "allow-mgmt-access",
+        "priority": "100",
+        "destinationApplicationSecurityGroup": "mgmt",
+        "destinationAddressPort": "22, 3389",
+        "direction": "Inbound",
+        "access": "Allow",
+        "protocol": "Tcp"
+      },
+      {
+        "type": "asg",
+        "name": "allow-web",
+        "priority": "120",
+        "destinationApplicationSecurityGroup": "web",
+        "destinationAddressPort": "80,443",
+        "direction": "Inbound",
+        "access": "Allow",
+        "protocol": "Tcp"
+      }
+    ]
+  },
+
+  {
+    "name": "nsg-hub",
+    "resourceGroup": "az300Primary",
+    "location": "eastus",
+    "rules": [
+      {
+        "name": "vnet-hub-allow-ssh",
+        "priority": "100",
+        "destinationApplicationSecurityGroup": "mgmt",
+        "destinationAddressPort": "22, 3389",
+        "direction": "Inbound",
+        "access": "Allow",
+        "protocol": "TCP",
+        "protoc0l": "ssh"
+      }
+    ]
+  }
+]
